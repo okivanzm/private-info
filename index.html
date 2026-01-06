@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Protected Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #login, #content {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    #content {
+      display: none;
+    }
+
+    input, button {
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- БЛОК ВХОДА -->
+<div id="login">
+  <h2>Введите пароль</h2>
+  <input type="password" id="password" placeholder="Пароль">
+  <button onclick="checkPassword()">Войти</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- ЗАЩИЩЁННЫЙ КОНТЕНТ -->
+<div id="content">
+  <h1>for her<h1/>
+
+  <p>
+Любить чужую женщину нельзя
+
+Но тосковать по ней немного можно и в надежде 
+
+Что может раз во сне она тебя 
+
+Обнимет и прошепчет нежно. 
+
+
+
+Что также тосковала по тебе
+
+И ропотно касания желала 
+
+Просила страсти, нежности везде...
+
+Того, что наяву бы не сказала 
+
+
+
+Тоска пройдет, сотрутся временем желанья
+
+Переплетутся мысли в бытие
+
+И лишь останутся одни воспоминанья
+
+Но каждый их оставит при себе.<br><br>
+    
+  </p>
+</div>
+
+<script>
+  const PASSWORD = "ivanzm1404"; // ← ЗДЕСЬ ПАРОЛЬ
+
+  function checkPassword() {
+    const input = document.getElementById("password").value;
+
+    if (input === PASSWORD) {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    } else {
+      document.getElementById("error").textContent = "Неверный пароль";
+    }
+  }
+</script>
+
+</body>
+</html>
