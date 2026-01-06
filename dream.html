@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вторая страница</title>
+  <style>
+    body {
+      font-family: Cavolini;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #login, #content {
+      background: light brown;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 100%;
+    }
+    #content { display: none; }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- БЛОК ВХОДА -->
+<div id="login">
+  <h2>Введите пароль</h2>
+  <input type="password" id="password" placeholder="Пароль">
+  <button onclick="checkPassword()">Войти</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- КОНТЕНТ ПОСЛЕ ВХОДА -->
+<div id="content">
+  <h1>Вторая защищённая страница</h1>
+  <p>Здесь находится текст второй страницы.</p>
+</div>
+
+<script>
+  const PASSWORD = "ivanzm1404"; // ← тот же пароль, что и в index.html
+
+  function checkPassword() {
+    const input = document.getElementById("password").value;
+    if (input === PASSWORD) {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    } else {
+      document.getElementById("error").textContent = "Неверный пароль";
+    }
+  }
+</script>
+
+</body>
+</html>
